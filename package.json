@@ -1,7 +1,7 @@
 {
     "name": "@dekproject/mongoose",
-    "version": "1.0.1",
-    "description": "Skeleton base for DEK plugins",
+    "version": "1.0.2",
+    "description": "Mongoose interface plugin for DEK",
     "main": "./build/index.js",
     "scripts": {
         "test": "mocha",
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/dekproject/plugin-bootstrap.git"
+        "url": "https://github.com/dekproject/mongoose.git"
     },
     "keywords": [
         "dek",
@@ -20,9 +20,9 @@
     "author": "Andre Ferreira <andre@vigiadepreco.com.br>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/dekproject/plugin-bootstrap/issues"
+        "url": "https://github.com/dekproject/mongoose/issues"
     },
-    "homepage": "https://github.com/dekproject/plugin-bootstrap#readme",
+    "homepage": "https://github.com/dekproject/mongoose#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
