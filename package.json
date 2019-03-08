@@ -1,6 +1,6 @@
 {
     "name": "@dekproject/mongoose",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Mongoose interface plugin for DEK",
     "main": "./build/index.js",
     "scripts": {

@@ -81,7 +81,7 @@ import routes from "@dekproject/routes";
 Using in the standard DEK skeleton
 
 ```js
-import { $, app, mongodb } from "@dekproject/scope";
+import { $, app } from "@dekproject/scope";
 import routes from "@dekproject/routes";
 
 $.wait("mongoose").then(() => {
@@ -116,7 +116,7 @@ mongoose.model('User', UserSchema);
 ### Controller
 
 ```js
-import mongoose from "mongoose";
+import { mongoose } from "@dekproject/scope";
 import "../model/users";
 
 var User = mongoose.model("User");

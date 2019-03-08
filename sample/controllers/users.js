@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import { mongoose } from "@dekproject/scope";
 import "../model/users";
 
 var User = mongoose.model("User");
