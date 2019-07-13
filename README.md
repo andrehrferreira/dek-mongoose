@@ -12,15 +12,7 @@ What does this plugin do?
 To install the bootstrap we recommend using the CLI
 
 ```bash
-$ npm i -g @dekproject/cli
-$ dek install mongoose
-```
-
-or
-
-```bash
-$ npm i @dekproject/mongoose @dekproject/scope
-$ nano .env
+$ yarn add @dekproject/cli --save
 ```
 
 In the .env file add the following settings
@@ -48,34 +40,6 @@ Using direct
 
 ```bash
 $ npm i @dekproject/scope @dekproject/routes
-```
-
-```js
-import express from "express";
-import bodyParser from "body-parser";
-import dotenv from "dotenv";
-
-import { $, plugins } from "@dekproject/scope";
-import routes from "@dekproject/routes";
-
-(async () => {
-    dotenv.config({ path: "./sample/.env" });
-    await plugins("");
-
-    $.set("app", express());
-    $.app.use(bodyParser.urlencoded({ extended: false }));
-    $.app.use(bodyParser.json());
-
-    const PORT = process.env.PORT || 5555;
-
-    $.wait("mongoose").then(async () => {
-        $.app.use(await routes("./sample/routes"));
-
-        $.app.listen(PORT, () => {
-            console.log(`App listening on port ${PORT}!`);
-        });
-    });
-})();
 ```
 
 Using in the standard DEK skeleton

@@ -6,8 +6,8 @@ import { $, plugins } from "@dekproject/scope";
 import routes from "@dekproject/routes";
 
 (async () => {
-    dotenv.config({ path: "./sample/.env" });
-    await plugins("");
+    dotenv.config();
+    await plugins("./build");
 
     $.set("app", express());
     $.app.use(bodyParser.urlencoded({ extended: false }));
