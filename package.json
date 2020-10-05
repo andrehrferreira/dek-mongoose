@@ -1,11 +1,11 @@
 {
     "name": "@dekproject/mongoose",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Mongoose interface plugin for DEK",
     "main": "./build/index.js",
     "scripts": {
         "test": "mocha",
-        "dev": "npm run build && babel-node sample --presets env",
+        "dev": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 npm run build && babel-node sample --presets env",
         "build": "babel src -s -D -d build --presets env"
     },
     "repository": {
@@ -24,7 +24,6 @@
     },
     "homepage": "https://github.com/dekproject/mongoose#readme",
     "dependencies": {
-        "cross-env": "^7.0.2",
         "mongoose": "^5.4.15"
     },
     "devDependencies": {
@@ -32,6 +31,7 @@
         "@dekproject/scope": "^1.1.4",
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
+        "cross-env": "^7.0.2",
         "dotenv": "^6.2.0",
         "mocha": "^6.0.1"
     }

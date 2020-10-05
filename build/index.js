@@ -55,7 +55,10 @@ exports.default = function () {
 
                 if (authUrl) connectionUrl = '' + authUrl + connectionUrl;
 
-                _mongoose2.default.connect('mongodb://' + connectionUrl, { useNewUrlParser: true }).then(function (res) {
+                _mongoose2.default.connect('mongodb://' + connectionUrl, {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                }).then(function (res) {
                     _scope.$.set("mongoose", _mongoose2.default);
 
                     if (process.env.DEBUG == 'true') console.log('[ Mongoose ] - MongoDB successfully signed');

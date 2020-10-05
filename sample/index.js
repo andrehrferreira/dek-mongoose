@@ -2,8 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
-import { $, plugins } from "@dekproject/scope";
-import routes from "@dekproject/routes";
+import { $, plugins, routes } from "@dekproject/scope";
 
 (async () => {
     dotenv.config();
@@ -16,10 +15,15 @@ import routes from "@dekproject/routes";
     const PORT = process.env.PORT || 5555;
 
     $.wait("mongoose").then(async () => {
-        $.app.use(await routes("./sample/routes"));
+        let routesController = await routes("./sample/routes").catch(() => {});
+
+        if(routesController)
+            $.app.use(routesController);
 
         $.app.listen(PORT, () => {
             console.log(`App listening on port ${PORT}!`);
         });
+    }).catch((err) => {
+        console.log(err);
     });
 })();

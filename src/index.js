@@ -59,7 +59,10 @@ export default () => {
 
                 if(authUrl) connectionUrl =  `${authUrl}${connectionUrl}`;
 
-                mongoose.connect(`mongodb://${connectionUrl}`, {useNewUrlParser: true}).then(res => {
+                mongoose.connect(`mongodb://${connectionUrl}`, {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                }).then(res => {
                     $.set("mongoose", mongoose);
 
                     if(process.env.DEBUG == 'true')
