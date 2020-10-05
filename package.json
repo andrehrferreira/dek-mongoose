@@ -24,6 +24,7 @@
     },
     "homepage": "https://github.com/dekproject/mongoose#readme",
     "dependencies": {
+        "cross-env": "^7.0.2",
         "mongoose": "^5.4.15"
     },
     "devDependencies": {
